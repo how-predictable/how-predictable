@@ -1,0 +1,4 @@
+forecastApi = (function(){
+	'use strict'
+
+)();
