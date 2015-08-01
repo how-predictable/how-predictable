@@ -1,40 +1,37 @@
-//var request = require('request');
-var weather = require('openweathermap');
+var request = require('request');
+var _ = require('underscore');
 
-// set defaults
-function formName(cityName){
-	return cityName + ',nz';
-}
+var HISTORY_URL = "http://www.metservice.com/publicData/climateDataDailyTown_wellington-city_32";
+var FUTURE = "http://www.metservice.com/publicData/localForecastwellington-city";
 
-function formDate(jsDate){
-	return Date.parse(jsDate).getTime() / 1000;
-}
-
-function defaultOptions(cityName){
-	return { 'q': formName(cityName), 'type': 'daily', 'units': 'metric' };
-}
-
-function getHistory(cityName, startDate, endDate, callback){
-	var options = defaultOptions(cityName);
-	if(startDate){
-		options['start'] = formDate(startDate);
-	}
-	if(endDate){
-		options['end'] = formDate(endDate);
-	}
-	weather.history(options, function(err, result){
-		callback(err, result);
+function getHistory(callback){
+	request(HISTORY_URL, function (error, response, body) {
+  		if(!error && response.statusCode == 200){
+			var filtered = filterHistory(body);
+  			callback(null, filtered);
+		} else {
+			callback(error, null);
+		}
 	});
 }
 
-function getForecast(cityName, count, callback){
-	var options = defaultOptions(cityName);
-	if(count){
-		options['ctn'] = count;
-	}
-	weather.forecast(options, function(err, result){
-		callback(err, result);
+function getForecast(callback){
+	request(FUTURE, function (error, response, body) {
+		if(!error && response.statusCode == 200){
+			var filtered = filterForecast(body);
+  			callback(null, filtered);
+		} else {
+			callback(error, null);
+		}
 	});
+}
+
+function filterForecast(forecast){
+	return forecast;
+}
+
+function filterHistory(history){
+	return history;
 }
 
 var out = {
