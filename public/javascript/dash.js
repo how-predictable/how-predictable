@@ -1,6 +1,4 @@
 function drawUsageGraph(graphData) {
-	console.log(graphData.wether);
-	
 	var data = {
 		labels: graphData.dates,
 		datasets: [
@@ -14,16 +12,16 @@ function drawUsageGraph(graphData) {
 				pointHighlightStroke: "rgba(220,220,220,1)",
 				data: graphData.wether,
 			},
-//			{
-//				label: "Power Usage",
-//				fillColor: "rgba(151,187,205,0.2)",
-//				strokeColor: "rgba(151,187,205,1)",
-//				pointColor: "rgba(151,187,205,1)",
-//				pointStrokeColor: "#fff",
-//				pointHighlightFill: "#fff",
-//				pointHighlightStroke: "rgba(151,187,205,1)",
-//				data: graphData.power_usage,
-//			}
+			{
+				label: "Power Usage",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: graphData.power_usage,
+			}
 		]
 	};
 

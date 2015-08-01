@@ -16,6 +16,9 @@
                  */
                 getData(drawUsageGraph); 
         }
+	
+		// We want to wait until the page is loaded
+		// as otherwise the element might not have a size
         $(document).ready(function() {
 			resizeCanvas();
 		});

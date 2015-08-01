@@ -23,16 +23,17 @@ function getData(callback) {
 		// Only temprarly hard coded
 		$.get("/api/weather/history/wellington", function(wether, status) {
 
-			// Get a list of dates
+			// Get a list of dates from the wether data, and get
+			// avg tempetures for each of the days
 			var dates = [];
-
 			var avgTemp = [];
 			for (var i = 0; i < wether.length; i++) {
-				console.log(wether[i]);
 				dates.push(wether[i].date)	
 				
 				var dataPoint = (parseInt(wether[i].maxTemp) + parseInt(wether[i].minTemp))/2;
 				
+				// Make sure the data point isnt NaN, this would
+				// break the graph
 				if (!isNaN(dataPoint)) {
 					avgTemp.push(dataPoint);	
 				} else {
@@ -40,14 +41,16 @@ function getData(callback) {
 				}
 			}
 
+			// Create an object to hold all the data and
+			// give it to the callback
 			graphData = {
 				dates: dates,
 				power_usage: powerUsage,
 				wether: avgTemp,
 			};
-			
-			console.log(avgTemp);
 
+			console.log(powerUsage);
+			
 			callback(graphData);
 		});
 	});
