@@ -14,6 +14,6 @@ app.use('/', routes);
 app.use('/api/weather', weatherApiRoutes);
 app.use('/api/powershop', powershopApiRoutes);
 
-app.listen(3000, function(port){
+app.listen(3000, function(){
 	console.log("listening on port: 3000");
 });
