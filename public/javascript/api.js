@@ -1,43 +1,55 @@
+var oauthToken = undefined;
+var oauthVerifier = undefined;
 
 function getData(callback) {
 
 	// Make sure that we have the key, otherwise return
 	// undefined
-//	if (key === undefined) {
-//		return undefined;	
-//	}
+	if (oauthToken === undefined) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		
+		oauthToken = vars[0];
+		oauthVerifier = vars[1];
+	}
 
 	// Access the api and run the callback with the data
 	// First get the powershop data and then get the wether
-	$.get("/api/powershop/usage_data", function(power, status) {
-		
+	$.get("/api/powershop/usage_data?oauthToken=" + oauthToken + "&oauthVerifier=" + oauthVerifier, function(power, status) {
+
 		// Get just the power usage
-		var powerUsage = power.result.data;//[];
-		//for (var i = 0; i < power.result.length; i++) {
-		//	powerUsage.push(power.result[i]);	
-		//}
+		var powerUsage = power.result.data;
 		
 		// Only temprarly hard coded
 		$.get("/api/weather/history/wellington", function(wether, status) {
 
 			// Get a list of dates
 			var dates = [];
+
+			var avgTemp = [];
 			for (var i = 0; i < wether.length; i++) {
+				console.log(wether[i]);
 				dates.push(wether[i].date)	
-			}
-			
-			var maxTemp = [];
-			for (var i = 0; i < wether.length; i++) {
-				maxTemp.push(wether[i].max);	
+				
+				var dataPoint = (parseInt(wether[i].maxTemp) + parseInt(wether[i].minTemp))/2;
+				
+				if (!isNaN(dataPoint)) {
+					avgTemp.push(dataPoint);	
+				} else {
+					avgTemp.push(0);	
+				}
 			}
 
 			graphData = {
 				dates: dates,
 				power_usage: powerUsage,
-				wether: wether,
-			}
+				wether: avgTemp,
+			};
+			
+			console.log(avgTemp);
 
 			callback(graphData);
 		});
 	});
+
 }
