@@ -4,14 +4,22 @@ var router = express.Router();
 var weather = require('../api/weather');
 
 router.get('/forecast', function(req, res, next) {
-	eather.getForecast('wellington', null, function(err, result){
-		res.send(result);
+	weather.getForecast(function(err, result){
+		if(!err){
+			res.send(result);
+		} else {
+			res.send(err);
+		}
 	});
 });
 
 router.get('/history', function(req, res, next) {
-	weather.getHistory('wellington', null, null, function(err, result){
-		res.send(result);
+	weather.getHistory(function(err, result){
+		if(!err){
+			res.send(result);
+		} else {
+			res.send(err);
+		}
 	});
 });
 

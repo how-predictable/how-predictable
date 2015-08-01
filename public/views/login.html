@@ -30,7 +30,7 @@
 		<!-- Login Form -->
 		<div class="container">
 
-          <form method="POST" action="dash.html" class="form-horizontal">
+          <div id="login-form" class="form-horizontal">
 
             <h1 class="text-center">Log in with Powershop</h1>
 
@@ -44,28 +44,26 @@
 
               <div class="form-group form-group-lg">
                 <div class="col-sm-12">
-                  <input id="password" class="form-control input-lg" name="password"
+                  <input id="password" class="form-control input-lg" name="password" type="password"
                     placeholder="Password">
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-12">
-                  <button class="btn btn-block btn-success">
+                  <button class="btn btn-block btn-success" onclick="login()">
                     <span class="glyphicon glyphicon-ok"></span> Sign In
                     </button>
                 </div>
               </div>
             </div>
 
-          </form>
+          </div>
 		</div>
 
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="/public/javascript/chart.js"></script>
-		<script src="/public/javascript/dash.js"></script>
-		<script src="/public/javascript/canvas-resize.js"></script>
+		<script src="/public/javascript/login.js"></script>
 	</body>
 
 </html>
