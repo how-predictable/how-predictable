@@ -24,3 +24,19 @@ body {
 	padding-top: 2.5em;
 	padding-bottom: 2.5em;
 }
+
+.avatar {
+	border-radius: 50%;
+}
+
+.future-weather {
+	border: 2px solid #ccc;
+}
+
+.take-action {
+	border: 2px solid #ccc;
+}
+
+.last-bill {
+	border: 2px solid #ccc;
+}
