@@ -3,17 +3,39 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/dash.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
 	</head>
 
 	<body>
-		<div class="container">
-			<div id="history-information" class="row">
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">How Predictable</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Welcome, Brad</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<!-- Power Usage Context -->
+		<div id="history-information" class="row">
+			<div class="container">
 				<div id="history-avg-wether" class="col-sm-4">
 					<div class="col-sm-6">
 						<img class="img-responsive" src="http://placehold.it/150x150" alt="">
 					</div>
 					<div class="col-sm-6">
-						The last month of wether was wet and cold
+						Last month, the weather was wet and cold
 					</div>
 				</div>
 				<div id="history-avg-bill" class="col-sm-4">
@@ -33,10 +55,29 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="row graph-row">
+		</div>
+		
+		<div class="row graph-row">
+			<div class="container">
 				<div id="usage-graph" class="col-sm-8">
 					<canvas id="graph"></canvas>
+					<div class="power-packs">
+						<div class="col-sm-4 text-center">
+				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
+				      		<p class="lead">Feature One</p>
+				      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				      	</div>
+				      	<div class="col-sm-4 text-center">
+				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
+				      		<p class="lead">Feature Two</p>
+				      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				      	</div>
+				      	<div class="col-sm-4 text-center">
+				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
+				      		<p class="lead">Feature Three</p>
+				      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				      	</div>
+					</div>
 				</div>
 				
 				<div id="future-information" class="col-sm-4">
@@ -50,26 +91,7 @@
 				</div>
 			</div>
 		</div>
-		
-		<!-- Fixed navbar -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">How Predictable</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Welcom Brad</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav>
+
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="../javascript/chart.js"></script>
