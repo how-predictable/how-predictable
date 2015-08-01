@@ -8,7 +8,7 @@ var powershopApiRoutes = require('./routes/powershopApi');
 var app = express();
 
 app.use(express.static(path.join(__dirname + '/public/views')));
-app.use(express.static(path.join(__dirname + '/public/javascript')));
+app.use('/public', express.static(path.join(__dirname + '/public')));
 
 app.use('/', routes);
 app.use('/api/weather', weatherApiRoutes);
