@@ -17,8 +17,9 @@
   },
   "dependencies": {
     "express": "~4.13.2",
-    "path": "~0.11.14",
+    "oauth": "^0.9.13",
     "openweathermap": "~1.0.0",
+    "path": "~0.11.14",
     "underscore": "~1.8.3"
   }
 }
