@@ -1,9 +1,31 @@
 body {
-  min-height: 2000px;
   padding-top: 70px;
+}
+
+/*-----HOME MAIN CTA-----*/
+.parent {
+	position: relative;
+	height: 300px;
+}
+
+.img-responsive {
+	display: inline-block;
 }
 
 .bottom-right {
 	position: absolute;
 	bottom: 0;
+	right: 0;
+}
+
+/*-----HOME FOLD ROW-----*/
+.fold-row {
+	padding-bottom: 2.5em;
+	border-bottom: 2px solid #ccc;
+}
+
+/*-----HOME FEATURES-----*/
+.features-row {
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
 }
