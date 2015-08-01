@@ -41,6 +41,7 @@ function drawUsageGraph() {
 		datasetStroke : true,
 		datasetStrokeWidth : 2,
 		datasetFill : true,
+		responsive: true,
 	};
 
 	// Draw the graph

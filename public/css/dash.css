@@ -9,3 +9,7 @@ body {
 .take-action {
 	height: 300px;
 }
+
+.graph-row {
+	width: 100%;
+}

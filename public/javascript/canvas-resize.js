@@ -3,12 +3,14 @@
         var canvas = document.getElementById('graph'),
                 context = canvas.getContext('2d');
 
+		console.log();
+	
         // resize the canvas to fill browser window dynamically
         parent.addEventListener('resize', resizeCanvas, false);
         
         function resizeCanvas() {
-                canvas.width = parent.innerWidth;
-                canvas.height = parent.innerHeight;
+                canvas.width = $("#usage-graph").width();
+                canvas.height = $("#usage-graph").height();
                 
                 /**
                  * Your drawings need to be inside this function otherwise they will be reset when 
@@ -16,5 +18,7 @@
                  */
                 drawUsageGraph(); 
         }
-        resizeCanvas();
+        $(document).ready(function() {
+			resizeCanvas();
+		});
 })();
