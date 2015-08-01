@@ -19,9 +19,9 @@ function authUser(username, password) {
 
 }
 
-function meterReadings() {
+function usageData() {
     return {
-        version: '1',
+        version: '2',
         result: [
             [132123, '2015-01-10 10:00:00', 'actual', 1482],
             [132123, '2015-01-11 10:00:00', 'actual', 1602],
@@ -35,5 +35,5 @@ function meterReadings() {
 
 module.exports = {
   auth: auth,
-  meterReadings: meterReadings,
+  usageData: usageData,
 }
