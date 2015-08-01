@@ -20,6 +20,7 @@
     "oauth": "^0.9.13",
     "openweathermap": "~1.0.0",
     "path": "~0.11.14",
+    "request": "^2.60.0",
     "underscore": "~1.8.3"
   }
 }
