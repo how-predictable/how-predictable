@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function drawUsageGraph() {
 	// Temp data for testing
 	var data = {
 		labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -46,4 +46,4 @@ $(document).ready(function() {
 	// Draw the graph
 	var ctx = document.getElementById("graph").getContext("2d");
 	var myNewChart = new Chart(ctx).Line(data, options);
-});
+};

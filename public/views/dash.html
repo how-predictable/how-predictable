@@ -7,7 +7,7 @@
 
 	<body>
 		<div class="container">
-			<div id="history-information" class="col-sm-12">
+			<div id="history-information" class="row">
 				<div id="history-avg-wether" class="col-sm-4">
 					<div class="col-sm-6">
 						<img class="img-responsive" src="http://placehold.it/150x150" alt="">
@@ -34,17 +34,19 @@
 				</div>
 			</div>
 			
-			<div id="usage-graph" class="col-sm-8">
-				<canvas id="graph" class="img-responsive"></canvas>
-			</div>
-			
-			<div id="future-information" class="col-sm-4">
-				<div id="future-wether" class="col-sm-12">
-				
+			<div class="row">
+				<div id="usage-graph" class="col-sm-8">
+					<canvas id="graph"></canvas>
 				</div>
 				
-				<div id="take-action" class="col-sm-12">
-					Take power of your power usage
+				<div id="future-information" class="col-sm-4">
+					<div id="future-wether" class="col-sm-12">
+					
+					</div>
+					
+					<div id="take-action" class="col-sm-12">
+						Take power of your power usage
+					</div>
 				</div>
 			</div>
 		</div>
@@ -72,6 +74,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="../javascript/chart.js"></script>
 		<script src="../javascript/dash.js"></script>
+		<script src="../javascript/canvas-resize.js"></script>
 	</body>
 
 </html>
