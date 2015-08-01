@@ -12,4 +12,15 @@ body {
 
 .graph-row {
 	width: 100%;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+}
+
+#history-information {
+	background-color: #eee;
+}
+
+.power-packs {
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
 }
