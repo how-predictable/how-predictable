@@ -7,10 +7,43 @@ router.get('/oauth', function(req, res, e) {
 });
 
 router.get('/usage_data', function(req, res, e) {
-    var customerId;
-    var startDate;
-    var endDate;
-    res.send(powershop.usageData(customerId, startDate, endDate));
+    res.send({
+        data: [
+          1234,
+          23423,
+          1212,
+          234,
+          345345,
+          123423,
+          2342,
+          234,
+          23423,
+          234234,
+          1234,
+          23423,
+          1212,
+          234,
+          345345,
+          123423,
+          2342,
+          234,
+          23423,
+          234234,
+          1234,
+          23423,
+          1212,
+          234,
+          345345,
+          123423,
+          2342,
+          234,
+          23423,
+          234234,
+          12343,
+          7834,
+          7345
+        ]
+    });
 });
 
 router.get('/auth', function(req, res, e) {
