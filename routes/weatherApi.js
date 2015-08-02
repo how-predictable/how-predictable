@@ -17,23 +17,23 @@ var weather = require('../api/weather');
 *		city - optional param to find the weather for a city (default is "wellington-city").
 *
 * Data Sent:
-*				a json array in the following format;
+*		a json array in the following format;
 *
-*				[
-*					{
-*						"date": str,
-*						"dayOfWeek": str,
-*						"shortDayOfWeek": str,
-*						"forcast": str,
-*						"forcastWord": str,
-*						"maxTemp": int,
-*						"minTemp": int
-*					},
-*					...
-*				]
+*		[
+*			{
+*				"date": str,
+*				"dayOfWeek": str,
+*				"shortDayOfWeek": str,
+*				"forcast": str,
+*				"forcastWord": str,
+*				"maxTemp": int,
+*				"minTemp": int
+*			},
+*			...
+*		]
 *
-*				This array is sorted so the first element is today's weather and
-*						tomorrows the next, and so on.
+*		This array is sorted so the first element is today's weather and
+*				tomorrows the next, and so on.
 */
 router.get('/forecast/:city*?', function(req, res, next) {
 	weather.getForecast(req.params.city, function(err, result){
@@ -53,22 +53,22 @@ router.get('/forecast/:city*?', function(req, res, next) {
 *			will be used instead.
 *
 * URL Params:
-*				city - optional param to find the weather for a city (default is "wellington-city").
+*		city - optional param to find the weather for a city (default is "wellington-city").
 *
 * Data Sent:
-*				a json array in the following format;
+*		a json array in the following format;
 *
-*				[
-*					{
-*						"date": str,
-*						"maxTemp": int,
-*						"minTemp": int
-*					},
-*					...
-*				]
+*		[
+*			{
+*				"date": str,
+*				"maxTemp": int,
+*				"minTemp": int
+*			},
+*			...
+*		]
 *
-*				This array is sorted so the first element is the weather 31 days ago, and so on.
-*				Note: at this time "NA" is a possible value for either of the temperature values.
+*		This array is sorted so the first element is the weather 31 days ago, and so on.
+*		Note: at this time "NA" is a possible value for either of the temperature values.
 */
 router.get('/history/:city*?', function(req, res, next) {
 	weather.getHistory(req.params.city, function(err, result){

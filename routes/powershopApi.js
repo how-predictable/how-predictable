@@ -6,7 +6,7 @@ var router = express.Router();
 var powershop = require('../api/powershop');
 
 router.get('/usage_data', function(req, res, e) {
-	var startDate = "2015-06-01"; // FIXME: get start & end dates
+	var startDate = "2015-06-01"; // FIXME: get start & end dates from user
 	var endDate = "2015-07-02";
 
 	powershop.usageData(startDate, endDate,

@@ -108,15 +108,15 @@ function filterForecast(forecast){
 *		an array of the last 32 days' weather, sorted into ascending order by their dates.
 */
 function filterHistory(history){
-	lerpArray(history, 'maxTemp', 'NA');
-	lerpArray(history, 'minTemp', 'NA');
 	var filted = _.map(history[0].data, function(day){
 		return renameKeys(
 			_.pick(day, 'maxTemp', 'minTemp', 'dateObs'),
-			{'dateObs': 'dkate'}
+			{'dateObs': 'date'}
 		);
 	});
 	filted.reverse();
+	lerpArray(filted, 'maxTemp', 'NA');
+	lerpArray(filted, 'minTemp', 'NA');
 	return filted;
 }
 
