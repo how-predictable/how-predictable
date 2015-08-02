@@ -5,13 +5,26 @@ function getData(callback) {
 	// Make sure that we have the key, otherwise return
 	// undefined
 	if (oauthToken === undefined) {
-		console.log(window.location.search.substring(1));
+		
+		// If there is no token in the URL then redirect to the
+		// login page
+		if (window.location.search.substring(1).indexOf("token") == -1) {
+			window.location = "/api/powershop/auth";
+		}
+		
 		oauthToken = window.location.search.substring(1).split("=")[1];
 	}
 
 	// Access the api and run the callback with the data
 	// First get the powershop data and then get the wether
 	$.get("/api/powershop/usage_data?token=" + oauthToken, function(power, status) {
+		
+		// If the data is undefined then redirect to the login
+		// page
+		if (power === undefined) {
+			window.location = "/api/powershop/auth";
+		}
+		
 		// Get just the power usage
 		var tmpPowerUsage = JSON.parse(power).result.data;
 		var powerUsage = [];
