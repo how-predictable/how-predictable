@@ -113,7 +113,7 @@ function filterHistory(history){
 	var filted = _.map(history[0].data, function(day){
 		return renameKeys(
 			_.pick(day, 'maxTemp', 'minTemp', 'dateObs'),
-			{'dateObs': 'dkate'}
+			{'dateObs': 'date'}
 		);
 	});
 	filted.reverse();
