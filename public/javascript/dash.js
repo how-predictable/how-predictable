@@ -1,27 +1,26 @@
-function drawUsageGraph() {
-	// Temp data for testing
+function drawUsageGraph(graphData) {
 	var data = {
-		labels: ["January", "February", "March", "April", "May", "June", "July"],
+		labels: graphData.dates,
 		datasets: [
 			{
-				label: "My First dataset",
-				fillColor: "rgba(220,220,220,0.2)",
-				strokeColor: "rgba(220,220,220,1)",
-				pointColor: "rgba(220,220,220,1)",
+				label: "Wether",
+				fillColor: "rgba(209,43,97,0.2)",
+				strokeColor: "rgba(245,53,115,1)",
+				pointColor: "rgba(245,53,115,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(220,220,220,1)",
-				data: [65, 59, 80, 81, 56, 55, 40]
+				data: graphData.wether,
 			},
 			{
-				label: "My Second dataset",
-				fillColor: "rgba(151,187,205,0.2)",
-				strokeColor: "rgba(151,187,205,1)",
-				pointColor: "rgba(151,187,205,1)",
+				label: "Power Usage",
+				fillColor: "rgba(141,12,194,0.2)",
+				strokeColor: "rgba(141,12,194,1)",
+				pointColor: "rgba(141,12,194,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(151,187,205,1)",
-				data: [28, 48, 40, 19, 86, 27, 90]
+				data: graphData.power_usage,
 			}
 		]
 	};

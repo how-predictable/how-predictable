@@ -1,3 +1,6 @@
+/**
+* Module for routing http://{domain name here}/api/weather/... HTTP requests.
+*/
 var express = require('express');
 var router = express.Router();
 
@@ -11,7 +14,7 @@ var weather = require('../api/weather');
 *			will be used instead.
 *
 * URL Params:
-*				city - optional param to find the weather for a city (default is "wellington-city").
+*		city - optional param to find the weather for a city (default is "wellington-city").
 *
 * Data Sent:
 *				a json array in the following format;
@@ -32,7 +35,7 @@ var weather = require('../api/weather');
 *				This array is sorted so the first element is today's weather and
 *						tomorrows the next, and so on.
 */
-router.get('/forecast/:city', function(req, res, next) {
+router.get('/forecast/:city*?', function(req, res, next) {
 	weather.getForecast(req.params.city, function(err, result){
 		if(!err){
 			res.send(result);
@@ -58,8 +61,8 @@ router.get('/forecast/:city', function(req, res, next) {
 *				[
 *					{
 *						"date": str,
-*						"maxTemp": int (or "NA"),
-*						"minTemp": int (or "NA")
+*						"maxTemp": int,
+*						"minTemp": int
 *					},
 *					...
 *				]
@@ -67,7 +70,7 @@ router.get('/forecast/:city', function(req, res, next) {
 *				This array is sorted so the first element is the weather 31 days ago, and so on.
 *				Note: at this time "NA" is a possible value for either of the temperature values.
 */
-router.get('/history/:city', function(req, res, next) {
+router.get('/history/:city*?', function(req, res, next) {
 	weather.getHistory(req.params.city, function(err, result){
 		if(!err){
 			res.send(result);
