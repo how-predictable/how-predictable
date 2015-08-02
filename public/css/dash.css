@@ -6,7 +6,7 @@ body {
 /* navbar */
 .navbar-default {
     background-color: #8d0cc2;
-    border-color: #8d0cc2;
+    border-color: transparent;
 }
 /* title */
 .navbar-default .navbar-brand {

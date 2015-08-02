@@ -39,7 +39,7 @@ img {
 /* navbar */
 .navbar-default {
     background-color: transparent;
-    border-color: #fff;
+    border-color: transparent;
 }
 /* title */
 .navbar-default .navbar-brand {
