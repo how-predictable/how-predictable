@@ -1,21 +1,20 @@
 var oauthToken = undefined;
-var oauthVerifier = undefined;
 
 function getData(callback) {
 
 	// Make sure that we have the key, otherwise return
 	// undefined
 	if (oauthToken === undefined) {
-		var query = window.location.search.substring(1);
-		var vars = query.split("&");
+		//var query = window.location.search.substring(1)
 		
-		oauthToken = vars[0];
-		oauthVerifier = vars[1];
+		oauthToken = window.location.search.substring(1).split("=")[1];//vars[0];
+		console.log(oauthToken);
+		//oauthVerifier = vars[1];
 	}
 
 	// Access the api and run the callback with the data
 	// First get the powershop data and then get the wether
-	$.get("/api/powershop/usage_data?oauthToken=" + oauthToken + "&oauthVerifier=" + oauthVerifier, function(power, status) {
+	$.get("/api/powershop/usage_data?token=" + oauthToken, function(power, status) {
 
 		// Get just the power usage
 		var powerUsage = power.result.data;
