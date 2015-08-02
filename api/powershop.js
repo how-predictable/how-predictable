@@ -57,10 +57,8 @@ function auth(callback) {
  */
 function getToken(oauthToken, oauthVerifier, callback) {
 	oauth.getOAuthAccessToken(oauthToken, oauthTokenSecert,  oauthVerifier,
-		function (err, oauth_access_token, oauth_access_token_secret, results) {
+		function (err, oauth_access_token, oauth_access_token_secret) {
 			if (!err) {
-				console.log("OAuth Access token: " +oauth_access_token);
-				console.log("OAuth Access secert: " +oauth_access_token_secret);
 				oauthAccessSecert = oauth_access_token_secret;
 				callback(null, '/dash.html' + "?token=" + oauth_access_token);
 			} else {
@@ -88,7 +86,7 @@ function accounts(accessToken, callback) {
 		api + "/v2/accounts.js" ,
 		accessToken,
 		oauthAccessSecert,
-		function(err, data, res){
+		function(err, data) {
 			if (!err) {
 				callback(null, data);
 			} else {
@@ -145,7 +143,7 @@ function usageData(startDate, endDate,
 				api + "/v1/usage_data.js?start_date=" + startDate + "&end_date=" + endDate + "&icp_number=" + data,
 				accessToken,
 				oauthAccessSecert,
-				function(err, data, res){
+				function(err, data) {
 					if (!err) {
 						callback(null, data);
 					} else {
