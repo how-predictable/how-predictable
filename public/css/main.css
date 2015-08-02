@@ -161,8 +161,8 @@ img {
 }
 
 .padded-row {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
 }
 
 .hook-text {
@@ -174,32 +174,53 @@ img {
 	margin-right: 0px !important;
 }
 
-.feture-title {
+.feature-title {
 	color: #8d0cc2;
 	font-weight: bold;
 	font-size: 20px;
 }
 
-.feture-text {
-	font-weight: bold;
+.feature-text {
+	color: #000;
+}
+
+.home-feature-img {
+	border-radius: 50%;
+	padding: 0;
+	margin: 0;
+}
+
+.arrow-down {
+	margin-top: -6px;
+}
+
+.last-cta {
+	padding-top: 8em;
 }
 
 /*-----HOME FOLD ROW-----*/
 .fold-row {
 	padding-bottom: 2.5em;
-	border-bottom: 2px solid #ccc;
+}
+
+.pull {
+	margin-top: -1em;
+	font-size: 24px;
 }
 
 /*-----HOME FEATURES-----*/
 .features-row {
 	padding-top: 2.5em;
-	padding-bottom: 2.5em;
 }
 
 .main-img {
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+.cta-row {
+	padding-top: 3em;
 }
 
 /*-----DASH-----*/

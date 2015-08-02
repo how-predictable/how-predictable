@@ -5,6 +5,7 @@ body {
 /*-----NAV BAR-----*/
 /* navbar */
 .navbar-default {
+    max-width: 100%;
     background-color: #8d0cc2;
     border-color: transparent;
 }
