@@ -10,45 +10,18 @@ router.get('/oauth', function(req, res, e) {
 });
 
 router.get('/usage_data', function(req, res, e) {
-    res.send({
-        verson: 2.0,
-        result: {
-          data: [
-            40.27,
-            49.59,
-            50.36,
-            53.62,
-            50.72,
-            48.66,
-            39.11,
-            39.28,
-            43.98,
-            41.04,
-            37.68,
-            44.91,
-            43.07,
-            43.96,
-            40.06,
-            33.7,
-            39.91,
-            49.27,
-            46.72,
-            48.62,
-            52.32,
-            51.02,
-            44.06,
-            44.3,
-            38.74,
-            33.68,
-            29.04,
-            33.59,
-            48.87,
-            48.41,
-            48.96,
-            47.04,
-            46.32
-          ]
-        },
+    var customerId;
+    var startDate;
+    var endDate;
+    powershop.usageData("","",customerId,
+      "95a8ecc99d688753dc2179929e1abc84",
+      "923d222c208c6094ed4941091bb6e170",
+      function(err, data) {
+        if (!err) {
+          res.send(data);
+        } else {
+          res.send(err);
+        }
     });
 });
 
@@ -57,6 +30,34 @@ router.get('/auth', function(req, res, e) {
         if (!err) {
           res.redirect(url);
         } else {
+          res.redirect("/"); // FIXME: Add error message to user
+        }
+    });
+});
+
+router.get('/token', function(req, res, e) {
+    powershop.getToken(
+      req.query.oauth_token,
+      req.query.oauth_verifier,
+      function(err, url) {
+        if (!err) {
+          res.redirect(url);
+        } else {
+          res.redirect("/"); // FIXME: Add error message to user
+        }
+    });
+});
+
+
+router.get('/accounts', function(req, res, e) {
+    powershop.accounts(
+      "95a8ecc99d688753dc2179929e1abc84",
+      "923d222c208c6094ed4941091bb6e170",
+      function(err, url) {
+        if (!err) {
+          res.send(url);
+        } else {
+          console.log(err);
           res.redirect("/"); // FIXME: Add error message to user
         }
     });
