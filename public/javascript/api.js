@@ -13,7 +13,12 @@ function getData(callback) {
 	// First get the powershop data and then get the wether
 	$.get("/api/powershop/usage_data?token=" + oauthToken, function(power, status) {
 		// Get just the power usage
-		var powerUsage = JSON.parse(power).result.data;
+		var tmpPowerUsage = JSON.parse(power).result.data;
+		var powerUsage = [];
+		
+		for (var i = 0; i < tmpPowerUsage.length; i++) {
+			powerUsage.push(Math.round(tmpPowerUsage[i] * 100) / 100);	
+		}
 		
 		// Only temprarly hard coded
 		$.get("/api/weather/history/wellington", function(wether, status) {
