@@ -1,6 +1,12 @@
 body {
-  padding-top: 70px;
   font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+    font-family: Komikax;
+    src: url();
 }
 
 /*-----TYPOGRAPHY-----*/
@@ -32,12 +38,12 @@ img {
 /*-----NAV BAR-----*/
 /* navbar */
 .navbar-default {
-    background-color: #8d0cc2;
-    border-color: #8d0cc2;
+    background-color: transparent;
+    border-color: #fff;
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: #fff;
+    color: #8d0cc2;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -45,7 +51,7 @@ img {
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
-    color: #fff;
+    color: #8d0cc2;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -55,44 +61,44 @@ img {
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
     color: #d12b61;
-    background-color: #8d0cc2;
+    background-color: transparent;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
     color: #d12b61;
-    background-color: #8d0cc2;
+    background-color: #fff;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #f53573;
-    border-bottom-color: #f53573;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 .navbar-default .navbar-nav > .open > a .caret, 
 .navbar-default .navbar-nav > .open > a:hover .caret, 
 .navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #d12b61;
-    border-bottom-color: #d12b61;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 /* mobile version */
 .navbar-default .navbar-toggle {
-    border-color: #8d0cc2;
+    border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #8d0cc2;
+    background-color: #fff;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #8d0cc2;
+    background-color: #fff;
 }
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #fff;
+        color: #8d0cc2;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -156,6 +162,12 @@ img {
 .features-row {
 	padding-top: 2.5em;
 	padding-bottom: 2.5em;
+}
+
+.main-img {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 /*-----DASH-----*/
