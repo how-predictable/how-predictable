@@ -2,8 +2,8 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/dash.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
@@ -17,91 +17,165 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">How Predictable</a>
+					<a class="navbar-brand" href="#">Thunder <span class="glyphicon glyphicon-flash"></span></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Welcome, Brad</a></li>
+						<li><a href="#"><span class=" icon-lg glyphicon glyphicon-user"></span></a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
 
+		<!-- Greeting -->
+		<div class="row greet-row">
+			<div class="text-center">
+				<p class="greet">Hey, Brad!</p>
+				<p><span class="icon-lg glyphicon glyphicon-flash"></span></p>
+			</div>
+		</div>
+
 		<!-- Power Usage Context -->
-		<div id="history-information">
+		<div id="history-information" class="text-center">
 			<div class="container">
-				<div id="history-avg-wether" class="col-sm-4">
-					<div class="col-sm-6">
-						<img class="img-responsive" src="http://placehold.it/150x150" alt="">
+				<div class="colour-class col-sm-4">
+					<div class="col-sm-12">
+						<img class="img-responsive" src="/public/img/raining-icon.png" alt="">
 					</div>
-					<div class="col-sm-6">
-						Last month, the weather was wet and cold
+					<div class="col-sm-12">
+						Last week, the weather was horribly wet and cold in Wellington
 					</div>
 				</div>
-				<div id="history-avg-bill" class="col-sm-4">
-					<div class="col-sm-6">
-						<img class="img-responsive" src="http://placehold.it/150x150" alt="">
+				<div class="highlight-class col-sm-4">
+				<div class="arrow-left visible-lg-block"></div>
+					<div class="col-sm-12">
+						<img class="img-responsive" src="/public/img/laundry.png" alt="">
 					</div>
-					<div class="col-sm-6">
-						Your power bill was $200
+					<div class="col-sm-12">
+						We see you used a lot of extra power — it was probably to get everything dry!
 					</div> 
 				</div>
-				<div id="history-savings" class="col-sm-4">
-					<div class="col-sm-6">
-						<img class="img-responsive" src="http://placehold.it/150x150" alt="">
+				<div class="colour-class col-sm-4">
+					<div class="arrow-left-highlight visible-lg-block"></div>
+					<div class="col-sm-12">
+						<img class="img-responsive" src="/public/img/piggy-bank.png" alt="">
 					</div>
-					<div class="col-sm-6">
-						You could have saved $2000000
+					<div class="col-sm-12">
+						Use <strong>Thunder</strong> to see the weather ahead of time, choose a more suitable powerpack and save $$$
 					</div>
 				</div>
 			</div>
 		</div>
 		
+		<div class="row usage-row text-center">
+			<p class="lead">Your Usage</p>
+		</div>
+
+		<div class="row tabs-row">
+			<div class="container">
+				<div class="col-sm-2">
+					<a href="#">Last Month</a>
+				</div>
+				<div class="offset-col-sm-2 sol-sm-2">
+					<a href="#">Now</a>
+				</div>
+			</div>
+		</div>
+
 		<div class="row graph-row">
 			<div class="container">
-				<div id="usage-graph" class="col-sm-8">
+				<div id="usage-graph" class="col-sm-12">
 					<canvas id="graph"></canvas>
-					<div class="power-packs">
-						<div class="col-sm-4 text-center">
-				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
-				      		<p class="lead">Power to the People Power Pack</p>
-				      		<p>$25</p>
-				      		<p>Get all the power you want for a price you can afford!</p>
-				      	</div>
-				      	<div class="col-sm-4 text-center">
-				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
-				      		<p class="lead">Sweather Weather Power Pack</p>
-				      		<p>$50</p>
-				      		<p>A nice and cosy pack for the whole family.</p>
-				      	</div>
-				      	<div class="col-sm-4 text-center">
-				      		<img class="img-responsive" src="http://placehold.it/200x100" alt="">
-				      		<p class="lead">Harden Up Pill</p>
-				      		<br>
-				      		<p>$0</p>
-				      		<p>Take a nice serving of concrete and harden up.</p>
-				      	</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row tabs-row text-center">
+			<div class="container">
+				Use this graph to look back, compare and predict your power usage against the weather in your region.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="container power-packs">
+				<p class="lead text-center">Your usage suggests these power packs:</p>
+				<div class="col-sm-4 text-center">
+		      		<img class="img-responsive pack-img" src="/public/img/sword-3.png" alt="">
+		      		<p class="lead title">Winter is Coming</p>
+		      		<p class="recommended">Recommended for you</p>
+		      		<p class="pack-text">Get all the power you want for a price you can afford!</p>
+		      	</div>
+		      	<div class="col-sm-4 text-center">
+		      		<img class="img-responsive pack-img" src="/public/img/sweater.png" alt="">
+		      		<p class="lead title">Sweather Weather</p>
+		      		<br>
+		      		<p class="pack-text">A nice and cosy pack for the whole family.</p>
+		      	</div>
+		      	<div class="col-sm-4 text-center">
+		      		<img class="img-responsive pack-img" src="/public/img/pill2.png" alt="">
+		      		<p class="lead title">Harden Up Pill</p>
+		      		<br>
+		      		<p class="pack-text">Take a nice serving of concrete and harden up.</p>
+		      	</div>
+			</div>
+		</div>
+
+		<!-- Pricing -->
+		<div class="row tabs-row text-center">
+			<div class="container">
+				<div class="col-sm-4 price"><a>$50</a></div>
+				<div class="col-sm-4 price"><a>$30</a></div>
+				<div class="col-sm-4 price"><a>$0</a></div>
+			</div>
+		</div>
+
+		<!-- Top Up -->
+		<div class="row topup text-center">
+			<div class="container">
+				Top Up
+			</div>
+		</div>
+
+		<!-- Your Account -->
+		<div class="row greet-row">
+			<div class="text-center">
+				<p class="greet">Your Account</p>
+				<p><span class="icon-lg glyphicon glyphicon-flash"></span></p>
+			</div>
+		</div>
+
+		<!-- Account Details -->
+		<div class="row">
+			<div class="container">
+				<div class="col-sm-12 account">
+					<div class="col-sm-6">
+						<p class="pack-text"><span class="glyphicon glyphicon-user"></span> <span class="name">brad<span></p>
+					</div>
+					<div class="col-sm-6">
+						<p class="pack-text">299 Fake Street, Newtown, Wellington, New Zealand</p>
 					</div>
 				</div>
-				
-				<div id="future-information" class="col-sm-4">
-					<div class="col-sm-12 future-weather">
-						<p>Sunnier skies are ahead in the Wellington region.</p>
+				<div class="col-sm-12 account">
+					<div class="col-sm-6">
+						<p class="pack-text"><span class="glyphicon glyphicon-tags"></span> <span class="name">last bill: $200<span></p>
 					</div>
-					<div class="col-sm-12 take-action">
-						<p>Power over spending and usage</p>
-						<p>Take a look at your power usage and pick a plan according to the temperature.</p>
-					</div>
-					<div class="col-sm-12 last-bill">
-						<p class="text-center"><img class="avatar img-responsive" src="http://placehold.it/150x150" alt=""></p>
-						<p class="text-center">Brad</p>
-						<p>299 Fake Street, Wellington, New Zealand</p>
-						<p>Ut sit amet ante felis. Duis consequat ultricies laoreet. Integer mollis non dui et dignissim. Vivamus eget nibh arcu. Fusce at quam mollis, lacinia nisl in, scelerisque nisl. Ut ut elit fringilla, hendrerit justo id, eleifend lectus. Nam eu quam non magna venenatis luctus id eget leo.</p>
+					<div class="col-sm-6">
+						<p class="pack-text">Predicted Savings: $50<span></p>
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<div class="row footer-row">
+			<footer class="text-center">
+				<div class="col-sm-12">
+					<img class="img-responsive" src="/public/img/sot-and-powershop.png" alt="Summer of Tech 2015 and Powershop">
+				</div>
+				<div class="col-sm-12">
+					<strong>A Summer of Tech</strong> 2015 Hackfest production by <strong>How Predictable</strong>
+				</div>
+			</footer>
+		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="/public/javascript/chart.js"></script>
