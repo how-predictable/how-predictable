@@ -16,7 +16,7 @@ function getData(callback) {
 	}
 
 	// Access the api and run the callback with the data
-	// First get the powershop data and then get the wether
+	// First get the powershop data and then get the weather
 	$.get("/api/powershop/usage_data?token=" + oauthToken, function(power, status) {
 		
 		// If the data is undefined then redirect to the login
@@ -35,16 +35,16 @@ function getData(callback) {
 		}
 		
 		// Only temprarly hard coded
-		$.get("/api/weather/history/wellington", function(wether, status) {
+		$.get("/api/weather/history/wellington", function(weather, status) {
 
-			// Get a list of dates from the wether data, and get
+			// Get a list of dates from the weather data, and get
 			// avg tempetures for each of the days
 			var dates = [];
 			var avgTemp = [];
-			for (var i = 0; i < wether.length; i++) {
-				dates.push(wether[i].date)	
+			for (var i = 0; i < weather.length; i++) {
+				dates.push(weather[i].date)	
 				
-				var dataPoint = (parseInt(wether[i].maxTemp) + parseInt(wether[i].minTemp))/2;
+				var dataPoint = (parseInt(weather[i].maxTemp) + parseInt(weather[i].minTemp))/2;
 				
 				if (!isNaN(dataPoint)) {
 					avgTemp.push(Math.round(dataPoint * 100) / 100);
@@ -58,7 +58,7 @@ function getData(callback) {
 			graphData = {
 				dates: dates,
 				power_usage: powerUsage,
-				wether: avgTemp,
+				weather: avgTemp,
 			};
 			
 			callback(graphData);
