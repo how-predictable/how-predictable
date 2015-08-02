@@ -5,13 +5,9 @@ var express = require('express');
 var router = express.Router();
 var powershop = require('../api/powershop');
 
-router.get('/oauth', function(req, res, e) {
-	res.send(powershop.auth());
-});
-
 router.get('/usage_data', function(req, res, e) {
-	var startDate = ""; // FIXME: use start & end dates
-	var endDate = "";
+	var startDate = "2015-06-01"; // FIXME: get start & end dates
+	var endDate = "2015-07-02";
 
 	powershop.usageData(startDate, endDate,
 		req.query.token,
@@ -55,7 +51,7 @@ router.get('/accounts', function(req, res, e) {
 			if (!err) {
 				res.send(url);
 			} else {
-				console.log(err);
+				console.log('error: ' + JSON.stringify(err));
 				res.redirect("/"); // FIXME: Add error message to user
 			}
 	});
