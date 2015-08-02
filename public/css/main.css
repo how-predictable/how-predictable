@@ -6,7 +6,7 @@ body {
 
 @font-face {
     font-family: Komikax;
-    src: url();
+    src: url(/public/fonts/KOMIKAX_.ttf);
 }
 
 /*-----TYPOGRAPHY-----*/
@@ -33,6 +33,39 @@ a:hover {
 
 img {
 	padding-bottom: 1.5em;
+}
+
+.hero-text {
+	font-family: Komikax;
+	color: #fff;
+	font-size: 38px;
+	line-height: 38px;
+	letter-spacing: 2px;
+	-ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Safari */
+    transform: rotate(350deg);
+    padding: 1em;
+}
+
+.subheading {
+	color: #fff;
+	font-size: 20px;
+	margin-top: 1em;
+}
+
+/*-----BUTTONS-----*/
+.btn-primary {
+	border-radius: 0;
+	background-color: #f53573;
+	color: #fff;
+	margin-top: 1em;
+	border: none;
+	font-size: 24px;
+}
+
+.btn-primary:hover {
+	cursor: pointer;
+	background-color: #d12b61
 }
 
 /*-----NAV BAR-----*/
@@ -133,8 +166,7 @@ img {
 }
 
 .hook-text {
-	font-weight: bold;
-	color: black;
+	font-size: 18px;
 }
 
 .row-no-lr-margin {
