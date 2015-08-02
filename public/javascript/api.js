@@ -21,7 +21,7 @@ function getData(callback) {
 		
 		// If the data is undefined then redirect to the login
 		// page
-		if (power === undefined) {
+		if (power.hasOwnProperty('statusCode')) {
 			window.location = "/api/powershop/auth";
 		}
 		
