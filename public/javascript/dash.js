@@ -17,7 +17,7 @@ function drawUsageGraph(graphData) {
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
 				pointHighlightStroke: "rgba(220,220,220,1)",
-				data: graphData.wether,
+				data: graphData.weather,
 			},
 			{
 				label: "Power Usage",
