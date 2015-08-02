@@ -1,105 +1,120 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
+	<head>
+		<title>How Predictable</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Monitor your power usage and spending based on local weather.">
+		<meta name="author" content="Lena Plaksina">
 
-<head>
-	<title>How Predictable</title>
-	<meta charset="utf-8">
-	<meta name="description" content="Monitor your power usage and spending based on local weather.">
-	<meta name="author" content="Lena Plaksina">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/public/css/main.css">
+		
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	</head>
 
-	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/public/css/main.css">
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-</head>
+	<body>
 
-<body>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">How Predictable</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="/api/powershop/auth">Login</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
 
-	<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">How Predictable</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Login</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+		<!-- Main component for a primary marketing message or call to action -->
+		<div class="row row-no-lr-margin purple-row padded-row">
+			<div class="container">
+				<div class="col-sm-4">
+					<h3>Winter is coming!</h3>
+					<p>Prepare to spend (wisely!)</p>
+				</div>
+				<div class="col-sm-4">
+					<img class="img-responsive" src="http://placehold.it/400x400" alt="">
+				</div>
+				<div class="col-sm-4 parent">
+					<p>We will help you get it under control</p>
+					<a class="btn btn-lg btn-primary bottom-right" href="#" role="button">Start Now &raquo;</a>
+				</div>
+			</div>
+		</div>
 
-    <div class="container">
+		<!-- Fold pull CTA -->
+		<div class="row row-no-lr-margin padded-row fold-row">
+			<p class="text-center hook-text">but we can predict your power usage based on the weather forcast, helping you save money</p>
+			<div class="text-center">
+				<a class="btn btn-lg btn-primary" href="#features" role="button">Find out how</a>
+			</div>
+		</div>
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="row">
-        	<div class="col-sm-4">
-        		<h3>Winter is coming!</h3>
-        		<p>Prepare to spend (wisely!)</p>
-        	</div>
-        	<div class="col-sm-4">
-        		<img class="img-responsive" src="http://placehold.it/400x400" alt="">
-        	</div>
-        	<div class="col-sm-4 parent">
-        		<p>We will help you get it under control</p>
-		        <a class="btn btn-lg btn-primary bottom-right" href="#" role="button">Start Now &raquo;</a>
-        	</div>
-        </div>
-      </div>
+		<!-- Features -->
+		<div class="row row-no-lr-margin features-row" id="features">
+			<div class="row row-no-lr-margin padded-row purple-row">
+				<div cl class="col-sm-4 text-center">
+					<img class="img-responsive" src="http://placehold.it/250x250" alt="">
+				</div>
 
-      <!-- Fold pull CTA -->
-      <div class="row fold-row">
-      	<h3 class="text-center">We will help you do the things!</h3>
-      	<div class="text-center">
-      		<a class="btn btn-lg btn-primary" href="#features" role="button">Find out how</a>
-      	</div>
-      </div>
+				<div cl class="col-sm-4 text-center">
+					<img class="img-responsive" src="http://placehold.it/250x250" alt="">
+				</div>
 
-      <!-- Features -->
-      <div class="row features-row" id="features">
-      	<div class="col-sm-4 text-center">
-      		<img class="img-responsive" src="http://placehold.it/250x250" alt="">
-      		<p class="lead">Feature One</p>
-      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
-      	</div>
-      	<div class="col-sm-4 text-center">
-      		<img class="img-responsive" src="http://placehold.it/250x250" alt="">
-      		<p class="lead">Feature Two</p>
-      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
-      	</div>
-      	<div class="col-sm-4 text-center">
-      		<img class="img-responsive" src="http://placehold.it/250x250" alt="">
-      		<p class="lead">Feature Three</p>
-      		<p>Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
-      	</div>
-      </div>
+				<div cl class="col-sm-4 text-center">
+					<img class="img-responsive" src="http://placehold.it/250x250" alt="">
+				</div>
+			</div>
 
-      <!-- Dash Screenshot and final CTA -->
-      <div class="row">
-      	<div class="col-sm-8">
-      		<img class="img-responsive" src="http://placehold.it/750x300" alt="">
-      	</div>
-      	<div class="col-sm-4 parent">
-	        <a class="btn btn-lg btn-primary bottom-right" href="#" role="button">Start Now &raquo;</a>
-    	</div>
-      </div>
+			<div class="row row-no-lr-margin padded-row">
+				<div cl class="col-sm-4 text-center">
+					<p class="feture-title">Feature One</p>
+					<p class="feture-text">Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				</div>
 
-    </div> <!-- /container -->
+				<div cl class="col-sm-4 text-center">
+					<p class="feture-title">Feature Two</p>
+					<p class="feture-text">Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				</div>
+
+				<div cl class="col-sm-4 text-center">
+					<p class="feture-title">Feature Three</p>
+					<p class="feture-text">Etiam ultricies et orci tempor tristique. Maecenas id facilisis sem, vitae rutrum ex. Phasellus scelerisque est erat, ut bibendum leo tempor vel.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Dash Screenshot and final CTA -->
+		<div class="row purple-row padded-row row-no-lr-margin">
+			<div class="col-sm-8">
+				<img class="img-responsive" src="http://placehold.it/750x300" alt="">
+			</div>
+		</div>
+		
+		<div class="row padded-row row-no-lr-margin">
+			<div class="col-sm-4 parent center-text">
+				<a class="btn btn-lg btn-primary" href="#" role="button">Start Now &raquo;</a>
+			</div>
+		</div>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/public/javascript/bootstrap.min.js"></script>
-</body>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/public/javascript/bootstrap.min.js"></script>
+	</body>
+>>>>>>> Stashed changes
 
 </html>

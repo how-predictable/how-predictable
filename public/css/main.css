@@ -116,6 +116,36 @@ img {
 	right: 0;
 }
 
+/*------HOME PAGE------*/
+.purple-row {
+	background: #8d0cc2;
+}
+
+.padded-row {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.hook-text {
+	font-weight: bold;
+	color: black;
+}
+
+.row-no-lr-margin {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.feture-title {
+	color: #8d0cc2;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.feture-text {
+	font-weight: bold;
+}
+
 /*-----HOME FOLD ROW-----*/
 .fold-row {
 	padding-bottom: 2.5em;
