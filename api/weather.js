@@ -1,3 +1,6 @@
+/**
+* Module for getting data from MetService's API and parsing it to our own format.
+*/
 var request = require('request');
 var _ = require('underscore');
 
@@ -15,12 +18,12 @@ var DEFAULT_CITY = "wellington-city";
 * Gets history data from MetService and formats it to our own format (see: routes/weatherApi.js).
 *
 * Params:
-*			cityName - name of city (default="wellington-city")
-*			callback - a function which will be called after the data is resolved,
+*		cityName - name of city (default="wellington-city")
+*		callback - a function which will be called after the data is resolved,
 *					the arguments passed into it will be (error, results).
 *
 * Returns:
-*				undefined (this function runs asynchronous call(s) therefore a callback is used to pass the results/error back)
+*		undefined (this function runs asynchronous call(s) therefore a callback is used to pass the results/error back)
 */
 function getHistory(cityName, callback){
 	var url = HISTORY_URL.join(cityName ? cityName : DEFAULT_CITY);
@@ -48,12 +51,12 @@ function getHistory(cityName, callback){
 * Gets forecast data from MetService and formats it to our own format (see: routes/weatherApi.js).
 *
 * Params:
-*			cityName - name of city (default="wellington-city")
-*			callback - a function which will be called after the data is resolved,
+*		cityName - name of city (default="wellington-city")
+*		callback - a function which will be called after the data is resolved,
 *					the arguments passed into it will be (error, results).
 *
 * Returns:
-*				undefined (this function runs asynchronous call(s) therefore a callback is used to pass the results/error back)
+*		undefined (this function runs asynchronous call(s) therefore a callback is used to pass the results/error back)
 */
 function getForecast(cityName, callback){
 	var url = FUTURE.join(cityName ? cityName : DEFAULT_CITY);
@@ -81,10 +84,10 @@ function getForecast(cityName, callback){
 * Filter MetService's furture forecast data to our own format.
 *
 * Params:
-*			forecast - obj returned from metservice's api
+*		forecast - obj returned from metservice's api
 *
 * Returns:
-*			an array of the next 10 days' weather, sorted into ascending order by their dates.
+*		an array of the next 10 days' weather, sorted into ascending order by their dates.
 */
 function filterForecast(forecast){
 	return _.map(forecast.days, function(day){
@@ -99,12 +102,13 @@ function filterForecast(forecast){
 * Filter MetService's history data to our own format.
 *
 * Params:
-*			history - obj returned from metservice's api
+*		history - obj returned from metservice's api
 *
 * Returns:
-*			an array of the last 32 days' weather, sorted into ascending order by their dates.
+*		an array of the last 32 days' weather, sorted into ascending order by their dates.
 */
 function filterHistory(history){
+	// TODO do this properily
 	function checkDay(index, array, key){
 		if(array[index][key] === 'NA'){
 			array[index][key] = '0';
@@ -128,11 +132,11 @@ function filterHistory(history){
 * Construct a new object with specified keys renamed.
 *
 * Params:
-*			obj	- object to copy and rename
-*			renameMap - object whose keys maps obj's key names to their new names
+*		obj	- object to copy and rename
+*		renameMap - object whose keys maps obj's key names to their new names
 *
 * Returns:
-*			a new object with keys renamed iff that key is in renameMap
+*		a new object with keys renamed iff that key is in renameMap
 */
 function renameKeys(obj, renameMap){
 	return _.reduce(obj, function(result, value, key){
