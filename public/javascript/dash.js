@@ -1,3 +1,10 @@
+var parent = document.getElementById('usage-graph');
+var canvas = document.getElementById('graph'),
+	context = canvas.getContext('2d');
+
+// resize the canvas to fill browser window dynamically
+parent.addEventListener('resize', resizeCanvas, false);
+
 function drawUsageGraph(graphData) {
 	var data = {
 		labels: graphData.dates,
@@ -47,3 +54,16 @@ function drawUsageGraph(graphData) {
 	var ctx = document.getElementById("graph").getContext("2d");
 	var myNewChart = new Chart(ctx).Line(data, options);
 };
+
+function resizeCanvas() {
+	canvas.width = $("#usage-graph").width();
+	canvas.height = $("#usage-graph").height();
+
+	getData(drawUsageGraph); 
+}
+
+// We want to wait until the page is loaded
+// as otherwise the element might not have a size
+$(document).ready(function() {
+	resizeCanvas();
+});

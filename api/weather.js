@@ -108,24 +108,40 @@ function filterForecast(forecast){
 *		an array of the last 32 days' weather, sorted into ascending order by their dates.
 */
 function filterHistory(history){
-	// TODO do this properily
-	function checkDay(index, array, key){
-		if(array[index][key] === 'NA'){
-			array[index][key] = '0';
-		}
-	}
+	lerpArray(history, 'maxTemp', 'NA');
+	lerpArray(history, 'minTemp', 'NA');
 	var filted = _.map(history[0].data, function(day){
 		return renameKeys(
 			_.pick(day, 'maxTemp', 'minTemp', 'dateObs'),
-			{'dateObs': 'date'}
+			{'dateObs': 'dkate'}
 		);
 	});
-	for(var i = 0; i < filted.length; i++){
-		checkDay(i, filted, 'maxTemp');
-		checkDay(i, filted, 'minTemp');
-	}
 	filted.reverse();
 	return filted;
+}
+
+function lerpArray(array, key, invalid){
+	function get(index){
+		return array[index][key];
+	}
+	function isValid(index){
+		return get(index) !== invalid;
+	}
+	for(var i = 0; i < array.length; i++){
+		if(!isValid(i)){
+			var divide = 0;
+			var sum = 0;
+			if(i > 0 && isValid(i - 1)){
+				divide++;
+				sum += parseInt(get(i - 1));
+			}
+			if(i < array.length - 1 && isValid(i + 1)){
+				divide++;
+				sum += parseInt(get(i + 1));
+			}
+			array[i][key] = '' + (sum / divide);
+		}
+	}
 }
 
 /**
