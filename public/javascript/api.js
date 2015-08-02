@@ -6,7 +6,7 @@ function getData(callback) {
 	// undefined
 	if (oauthToken === undefined) {
 		//var query = window.location.search.substring(1)
-		
+		console.log(window.location.search.substring(1));
 		oauthToken = window.location.search.substring(1).split("=")[1];//vars[0];
 		console.log(oauthToken);
 		//oauthVerifier = vars[1];
@@ -16,8 +16,9 @@ function getData(callback) {
 	// First get the powershop data and then get the wether
 	$.get("/api/powershop/usage_data?token=" + oauthToken, function(power, status) {
 
+		
 		// Get just the power usage
-		var powerUsage = power.result.data;
+		var powerUsage = JSON.parse(power).result.data;
 		
 		// Only temprarly hard coded
 		$.get("/api/weather/history/wellington", function(wether, status) {
@@ -30,14 +31,6 @@ function getData(callback) {
 				dates.push(wether[i].date)	
 				
 				var dataPoint = (parseInt(wether[i].maxTemp) + parseInt(wether[i].minTemp))/2;
-				
-				// Make sure the data point isnt NaN, this would
-				// break the graph
-				if (!isNaN(dataPoint)) {
-					avgTemp.push(dataPoint);	
-				} else {
-					avgTemp.push(0);	
-				}
 			}
 
 			// Create an object to hold all the data and
