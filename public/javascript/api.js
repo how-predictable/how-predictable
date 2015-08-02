@@ -16,6 +16,7 @@ function getData(callback) {
 		var tmpPowerUsage = JSON.parse(power).result.data;
 		var powerUsage = [];
 		
+		// Go through all the usage data and round it
 		for (var i = 0; i < tmpPowerUsage.length; i++) {
 			powerUsage.push(Math.round(tmpPowerUsage[i] * 100) / 100);	
 		}
@@ -33,7 +34,7 @@ function getData(callback) {
 				var dataPoint = (parseInt(wether[i].maxTemp) + parseInt(wether[i].minTemp))/2;
 				
 				if (!isNaN(dataPoint)) {
-					avgTemp.push(dataPoint);
+					avgTemp.push(Math.round(dataPoint * 100) / 100);
 				} else {
 					avgTemp.push(0);	
 				}
