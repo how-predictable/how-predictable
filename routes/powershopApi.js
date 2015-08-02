@@ -1,3 +1,6 @@
+/**
+* Module for routing http://{domain name here}/api/powershop/... HTTP requests.
+*/
 var express = require('express');
 var router = express.Router();
 var powershop = require('../api/powershop');
